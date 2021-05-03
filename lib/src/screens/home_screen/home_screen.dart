@@ -3,8 +3,10 @@ import 'package:flutter_tabler_icons/flutter_tabler_icons.dart';
 import 'package:jsr_sos/src/constants/colors.dart';
 import 'package:jsr_sos/src/constants/theme.dart';
 import 'package:jsr_sos/src/global_components/global_app_bar.dart';
-import 'package:jsr_sos/src/screens/home_screen/local_components/carousal.dart';
-import 'package:jsr_sos/src/screens/home_screen/local_components/services_select.dart';
+import 'package:jsr_sos/src/screens/home_screen/doctors_screen/doctors_screen.dart';
+import 'package:jsr_sos/src/screens/home_screen/faqs_screen/fas_screen.dart';
+import 'package:jsr_sos/src/screens/home_screen/helpline_screen/helpline_screen.dart';
+import 'package:jsr_sos/src/screens/home_screen/services_screen/servicess_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   static String routeName = '/home-screen';
@@ -15,13 +17,18 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   int index = 0;
+  final screens = [
+    ServicesScreen(),
+    DoctorsScreen(),
+    FaqsScreen(),
+    HelplineScreen()
+  ];
+  final titles = ['Home', 'Doctor', 'Faqs', 'Helpline'];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: globalAppBar(title: 'Home'),
-      body: Column(
-        children: [Carousel(), Flexible(child: ServicesSelect())],
-      ),
+      appBar: globalAppBar(title: titles[index]),
+      body: screens[index],
       bottomNavigationBar: BottomNavigationBar(
         selectedItemColor: AppColors.black12,
         unselectedItemColor: AppColors.grey.withOpacity(0.5),

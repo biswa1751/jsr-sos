@@ -1,5 +1,6 @@
 import 'package:jsr_sos/src/constants/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:jsr_sos/src/constants/theme.dart';
 
 class AppButton extends StatelessWidget {
   final String text;
@@ -13,15 +14,12 @@ class AppButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialButton(
-      color: AppColors.black,
+      color: AppColors.blue,
       onPressed: onPressed,
-      child: Padding(
-        padding: const EdgeInsets.all(15.0),
-        child: Text(
-          text,
-          style:
-              Theme.of(context).textTheme.button!.copyWith(color: Colors.white),
-        ),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
+      child: Text(
+        text,
+        style: AppTheme.textTheme.h412Medium!.copyWith(color: Colors.white),
       ),
     );
   }

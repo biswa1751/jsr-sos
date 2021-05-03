@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class FirestoreService {
@@ -31,12 +33,16 @@ class FirestoreService {
       query = queryBuilder(query);
     }
     final snapshots = query.snapshots();
-    print(snapshots.first);
+    log('first value ${snapshots.first}');
     return snapshots.map((snapshot) {
       final result = snapshot.docs
-          .map((snapshot) => builder(snapshot.data(), snapshot.id))
+          .map((snapshot) {
+            return builder(snapshot.data(), snapshot.id);
+          })
           .where((value) => value != null)
           .toList();
+      log('result');
+      log(result.toString());
       if (sort != null) {
         result.sort(sort);
       }

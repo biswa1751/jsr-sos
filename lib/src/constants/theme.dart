@@ -145,7 +145,7 @@ class AppTheme {
       textStyle: _defaultTextTheme.overline!.copyWith(
         fontWeight: FontWeight.w600,
         fontSize: 11,
-        letterSpacing: 1,
+
         fontStyle: FontStyle.normal,
         // height: 11,
         color: AppColors.black,
@@ -156,7 +156,6 @@ class AppTheme {
         fontWeight: FontWeight.w500,
         fontStyle: FontStyle.normal,
         fontSize: 16,
-        letterSpacing: 1.5,
         height: 24 / 16,
         color: AppColors.black,
       ),
@@ -171,7 +170,7 @@ class AppTheme {
       ),
     ),
     h412Medium: GoogleFonts.poppins(
-      textStyle: _defaultTextTheme.headline4!.copyWith(
+      textStyle: _defaultTextTheme.button!.copyWith(
         fontWeight: FontWeight.w500,
         fontStyle: FontStyle.normal,
         fontSize: 10,

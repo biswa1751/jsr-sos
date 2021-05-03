@@ -12,10 +12,12 @@ class Resource extends Equatable {
     this.verificationDate,
     this.name,
     this.remark,
+    this.phoneNumbers,
   });
   final String? name, remark, address;
   final bool? isVerified;
   final Timestamp? verificationDate;
+  final List<String?>? phoneNumbers;
   @override
   List<Object?> get props =>
       [name, remark, address, isVerified, verificationDate];
@@ -42,16 +44,21 @@ class Resource extends Equatable {
     } else {
       verificationData = data['verification_date'] as Timestamp?;
     }
+    var phoneNumbers = <String?>[];
+    if (data['phone_number'] != null) {
+      phoneNumbers =
+          data['phone_number'].map<String?>((n) => n.toString()).toList();
+    }
     if (name == null) {
       throw StateError('missing name for jobId: $documentId');
     }
     return Resource(
-      name: name,
-      remark: remark,
-      address: address,
-      isVerified: isVerified,
-      verificationDate: verificationData,
-    );
+        name: name,
+        remark: remark,
+        address: address,
+        isVerified: isVerified,
+        verificationDate: verificationData,
+        phoneNumbers: phoneNumbers);
   }
 
   Map<String, dynamic> toMap() {

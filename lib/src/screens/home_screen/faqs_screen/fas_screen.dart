@@ -41,7 +41,11 @@ class FaqsScreen extends StatelessWidget {
         ),
         Padding(
           padding: const EdgeInsets.all(20.0),
-          child: Image.asset(AppAssetImages.vaccineTimeline),
+          child: Image.asset(
+            AppAssetImages.vaccineTimeline,
+            fit: BoxFit.cover,
+            width: MediaQuery.of(context).size.width,
+          ),
         ),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20.0),

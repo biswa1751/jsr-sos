@@ -2,6 +2,7 @@ import 'package:jsr_sos/src/constants/constants.dart';
 import 'package:date_format/date_format.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class AppHelpers {
   static void showSnackBar(BuildContext context, String message) {
@@ -72,6 +73,15 @@ class AppHelpers {
       return int.tryParse(priceInPaise)! ~/ 100;
     } catch (e) {
       return 0;
+    }
+  }
+
+  static void call(String number) async {
+    final url = 'tel:$number';
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      print('Cannot launch url $url');
     }
   }
 }

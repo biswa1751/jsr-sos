@@ -33,7 +33,6 @@ class FirestoreService {
       query = queryBuilder(query);
     }
     final snapshots = query.snapshots();
-    log('first value ${snapshots.first}');
     return snapshots.map((snapshot) {
       final result = snapshot.docs
           .map((snapshot) {
@@ -41,8 +40,7 @@ class FirestoreService {
           })
           .where((value) => value != null)
           .toList();
-      log('result');
-      log(result.toString());
+
       if (sort != null) {
         result.sort(sort);
       }

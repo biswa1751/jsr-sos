@@ -1,5 +1,5 @@
 class AppStrings {
-  static const appTitle = 'App Title';
+  static const appTitle = 'JSR SOS';
 }
 
 

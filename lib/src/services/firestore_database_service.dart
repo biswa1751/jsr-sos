@@ -1,5 +1,7 @@
 import 'dart:async';
+import 'dart:developer';
 
+import 'package:jsr_sos/src/constants/firestore_paths.dart';
 import 'package:jsr_sos/src/models/test_model.dart';
 import 'package:jsr_sos/src/services/firestore_service.dart';
 
@@ -27,5 +29,12 @@ class FirestoreDatabaseService {
   Stream<List<TestModel>> datasStream() => _service.collectionStream(
         path: '',
         builder: (data, documentId) => TestModel.fromMap(data, documentId),
+      );
+  Stream<List<TestModel>> servicesStream() => _service.collectionStream(
+        path: FireStorePaths.services,
+        builder: (data, documentId) {
+          log(data.toString());
+          return TestModel.fromMap(data, documentId);
+        },
       );
 }

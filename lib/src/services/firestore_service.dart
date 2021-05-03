@@ -31,6 +31,7 @@ class FirestoreService {
       query = queryBuilder(query);
     }
     final snapshots = query.snapshots();
+    print(snapshots.first);
     return snapshots.map((snapshot) {
       final result = snapshot.docs
           .map((snapshot) => builder(snapshot.data(), snapshot.id))

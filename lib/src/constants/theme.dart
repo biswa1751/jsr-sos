@@ -151,24 +151,59 @@ class AppTheme {
         color: AppColors.black,
       ),
     ),
-    h2Sans: GoogleFonts.josefinSans(
-      textStyle: _defaultTextTheme.overline!.copyWith(
-        fontWeight: FontWeight.w400,
+    h216Medium: GoogleFonts.poppins(
+      textStyle: _defaultTextTheme.headline2!.copyWith(
+        fontWeight: FontWeight.w500,
         fontStyle: FontStyle.normal,
-        fontSize: 36,
+        fontSize: 16,
         letterSpacing: 1.5,
-        // height: 36,
+        height: 24 / 16,
         color: AppColors.black,
       ),
     ),
-    paragraph: GoogleFonts.josefinSans(
-      textStyle: _defaultTextTheme.bodyText1!.copyWith(
-        fontWeight: FontWeight.w300,
-        fontSize: 18,
-        // letterSpacing: -0.5,
-        // height: 18,
-        color: AppColors.black,
+    h216Regular: GoogleFonts.poppins(
+      textStyle: _defaultTextTheme.headline2!.copyWith(
+        fontWeight: FontWeight.normal,
         fontStyle: FontStyle.normal,
+        fontSize: 14,
+        height: 21 / 14,
+        color: AppColors.black,
+      ),
+    ),
+    h412Medium: GoogleFonts.poppins(
+      textStyle: _defaultTextTheme.headline4!.copyWith(
+        fontWeight: FontWeight.w500,
+        fontStyle: FontStyle.normal,
+        fontSize: 10,
+        height: 18 / 10,
+        color: AppColors.black,
+      ),
+    ),
+    h410Regular: GoogleFonts.poppins(
+      textStyle: _defaultTextTheme.headline2!.copyWith(
+        fontWeight: FontWeight.normal,
+        fontStyle: FontStyle.normal,
+        fontSize: 10,
+        height: 18 / 10,
+        color: AppColors.black,
+      ),
+    ),
+    regular12: GoogleFonts.poppins(
+      textStyle: _defaultTextTheme.bodyText1!.copyWith(
+        fontWeight: FontWeight.normal,
+        fontStyle: FontStyle.normal,
+        fontSize: 12,
+        height: 18 / 12,
+        color: AppColors.black,
+      ),
+    ),
+    headerBold14: GoogleFonts.poppins(
+      textStyle: _defaultTextTheme.headline2!.copyWith(
+        fontWeight: FontWeight.w600,
+        fontStyle: FontStyle.normal,
+        fontSize: 14,
+        height: 21 / 14,
+        color: AppColors.black,
       ),
     ),
   );
@@ -176,12 +211,20 @@ class AppTheme {
 
 // all the admin text theme
 class AppTextTheme extends TextTheme {
-  final TextStyle? paragraph;
-  final TextStyle? h2Sans;
+  final TextStyle? h216Medium;
+  final TextStyle? h216Regular;
+  final TextStyle? h412Medium;
+  final TextStyle? h410Regular;
+  final TextStyle? regular12;
+  final TextStyle? headerBold14;
 
   AppTextTheme({
-    this.paragraph,
-    this.h2Sans,
+    this.h216Medium,
+    this.h216Regular,
+    this.h410Regular,
+    this.h412Medium,
+    this.headerBold14,
+    this.regular12,
     headline1,
     headline2,
     headline3,

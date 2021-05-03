@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:jsr_sos/src/constants/theme.dart';
 import 'package:jsr_sos/src/global_components/global_app_bar.dart';
 import 'package:jsr_sos/src/global_components/loading_card.dart';
 import 'package:jsr_sos/src/models/resource.dart';

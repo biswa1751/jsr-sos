@@ -47,6 +47,7 @@ dependencies:
   firebase_core: ^1.1.0
   flutter_tabler_icons: ^1.1.1
   carousel_slider: ^4.0.0-nullsafety.0
+  maps_launcher: ^2.0.0
 
 flutter_icons:
   android: "ic_launcher"

@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:jsr_sos/src/constants/colors.dart';
 import 'package:jsr_sos/src/constants/theme.dart';
-import 'package:jsr_sos/src/global_components/app_button.dart';
 import 'package:jsr_sos/src/global_components/loading_card.dart';
-import 'package:jsr_sos/src/helpers/app_helpers.dart';
 import 'package:jsr_sos/src/models/resource.dart';
 import 'package:jsr_sos/src/screens/error_info_screen/error_info_screen.dart';
 import 'package:jsr_sos/src/screens/home_screen/doctors_screen/local_components/resource_info_card.dart';

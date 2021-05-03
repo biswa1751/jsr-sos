@@ -5,6 +5,7 @@ import 'package:jsr_sos/src/constants/theme.dart';
 import 'package:jsr_sos/src/global_components/app_button.dart';
 import 'package:jsr_sos/src/helpers/app_helpers.dart';
 import 'package:jsr_sos/src/models/resource.dart';
+import 'package:maps_launcher/maps_launcher.dart';
 
 class ResourceInfoCard extends StatelessWidget {
   final Resource resource;
@@ -57,18 +58,38 @@ class ResourceInfoCard extends StatelessWidget {
                   style: AppTheme.textTheme.regular12,
                 )
               : Text('We are verifying it'),
+          SizedBox(height: 20),
           Align(
             alignment: Alignment.bottomRight,
-            child: AppButton(
-              text: 'Call',
-              onPressed: () {
-                showDialog(
-                  context: context,
-                  builder: (_) => SelectNumber(
-                    numbers: resource.phoneNumbers ?? [],
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                if (resource.address != null &&
+                    (resource.address?.isNotEmpty ?? false))
+                  OutlinedButton(
+                    onPressed: () {
+                      MapsLauncher.launchQuery(resource.address!);
+                    },
+                    child: Text(
+                      'Get Direction',
+                      style: AppTheme.textTheme.h412Medium,
+                    ),
                   ),
-                );
-              },
+                SizedBox(
+                  width: 20,
+                ),
+                AppButton(
+                  text: 'Call',
+                  onPressed: () {
+                    showDialog(
+                      context: context,
+                      builder: (_) => SelectNumber(
+                        numbers: resource.phoneNumbers ?? [],
+                      ),
+                    );
+                  },
+                ),
+              ],
             ),
           )
         ],

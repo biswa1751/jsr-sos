@@ -30,8 +30,18 @@ class Resource extends Equatable {
     final name = data['name'] as String?;
     final remark = data['remark'] as String?;
     final address = data['address'] as String?;
-    final isVerified = data['is_verified'] as bool?;
-    final verificationData = data['verification_date'] as Timestamp?;
+    var isVerified;
+    if (data['is_verified'] == null || data['is_verified'].toString().isEmpty) {
+      isVerified = false;
+    } else {
+      isVerified = data['is_verified'] as bool?;
+    }
+    var verificationData;
+    if (data['verification_date'].toString().isEmpty) {
+      verificationData = null;
+    } else {
+      verificationData = data['verification_date'] as Timestamp?;
+    }
     if (name == null) {
       throw StateError('missing name for jobId: $documentId');
     }

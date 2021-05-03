@@ -20,19 +20,19 @@ class AppConstants {
     Service(
       id: 1,
       iconUrl: 'https://i.ibb.co/GT9cZzH/testing-icon.png',
-      route: '/covid-testing',
+      route: '/covid_testing',
       title: 'covid testing',
     ),
     Service(
       id: 2,
       iconUrl: 'https://i.ibb.co/JF80m0z/bed-icon.png',
-      route: '/hospital-beds',
+      route: '/hospital_beds',
       title: 'hospital beds',
     ),
     Service(
       id: 3,
       iconUrl: 'https://i.ibb.co/TRFSLJJ/medicine-icon.png',
-      route: '/medical-shops',
+      route: '/medical_shops',
       title: 'medical shops',
     ),
     Service(
@@ -50,19 +50,19 @@ class AppConstants {
     Service(
       id: 6,
       iconUrl: 'https://i.ibb.co/VgsBnpM/blood-icon.png',
-      route: '/blood-and-plasma',
+      route: '/blood_and_plasma',
       title: 'blood and plasma',
     ),
     Service(
       id: 7,
       iconUrl: 'https://i.ibb.co/1fdXsVS/paidbed-icon.png',
-      route: '/paid-isolation-facility',
+      route: '/paid_isolation_facility',
       title: 'paid isolation facility',
     ),
     Service(
       id: 8,
       iconUrl: 'https://i.ibb.co/YDx87Qm/Test-icon.png',
-      route: '/other-lab-tests',
+      route: '/other_lab_tests',
       title: 'other lab tests',
     ),
   ];

@@ -6,6 +6,7 @@ import 'package:jsr_sos/src/global_components/loading_card.dart';
 import 'package:jsr_sos/src/helpers/app_helpers.dart';
 import 'package:jsr_sos/src/models/resource.dart';
 import 'package:jsr_sos/src/screens/error_info_screen/error_info_screen.dart';
+import 'package:jsr_sos/src/screens/home_screen/doctors_screen/local_components/resource_info_card.dart';
 import 'package:jsr_sos/src/services/firestore_database_service.dart';
 
 class DoctorsScreen extends StatelessWidget {
@@ -41,53 +42,7 @@ class DoctorsScreen extends StatelessWidget {
                 itemCount: snapshot.data?.length,
                 itemBuilder: (_, index) {
                   final doctor = snapshot.data?[index];
-                  return Container(
-                    padding: const EdgeInsets.all(15),
-                    margin: const EdgeInsets.fromLTRB(15, 0, 15, 15),
-                    decoration: BoxDecoration(
-                        border: Border.all(color: AppColors.greyd6),
-                        borderRadius: BorderRadius.circular(5)),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Row(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Flexible(
-                              child: Text(
-                                doctor?.name ?? '',
-                                style: AppTheme.textTheme.h216Medium,
-                              ),
-                            ),
-                            Container(
-                              alignment: Alignment.center,
-                              padding: const EdgeInsets.symmetric(
-                                horizontal: 14,
-                                vertical: 3,
-                              ),
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10),
-                                color: AppColors.green,
-                              ),
-                              child: Text(
-                                'Verified',
-                                style: AppTheme.textTheme.h412Medium!
-                                    .copyWith(color: AppColors.white),
-                                textAlign: TextAlign.center,
-                              ),
-                            )
-                          ],
-                        ),
-                        Text(
-                          'Veified on: ${AppHelpers.getFormattedDate(doctor!.verificationDate!.toDate())}',
-                          style: AppTheme.textTheme.regular12,
-                        ),
-                        Align(
-                            alignment: Alignment.bottomRight,
-                            child: AppButton(text: 'Call', onPressed: () {}))
-                      ],
-                    ),
-                  );
+                  return ResourceInfoCard(resource: doctor!);
                 },
               ),
             ),

@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="in.co.jsrsos.jsr_sos">
    <application
-        android:label="jsr_sos"
+        android:label="JSR SOS"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"

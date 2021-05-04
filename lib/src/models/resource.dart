@@ -1,4 +1,3 @@
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:equatable/equatable.dart';
 import 'package:meta/meta.dart';
@@ -11,12 +10,12 @@ class Resource extends Equatable {
     this.verificationDate,
     this.name,
     this.remark,
-    this.phoneNumbers,
+    required this.phoneNumbers,
   });
   final String? name, remark, address;
   final bool? isVerified;
   final Timestamp? verificationDate;
-  final List<String?>? phoneNumbers;
+  final List<String?> phoneNumbers;
   @override
   List<Object?> get props =>
       [name, remark, address, isVerified, verificationDate];
@@ -52,17 +51,26 @@ class Resource extends Equatable {
       throw StateError('missing name for jobId: $documentId');
     }
     return Resource(
-        name: name,
-        remark: remark,
-        address: address,
-        isVerified: isVerified,
-        verificationDate: verificationData,
-        phoneNumbers: phoneNumbers);
+      name: name,
+      remark: remark,
+      address: address,
+      isVerified: isVerified,
+      verificationDate: verificationData,
+      phoneNumbers: phoneNumbers,
+    );
   }
 
   Map<String, dynamic> toMap() {
     return {
       'name': name,
     };
+  }
+
+  bool get hasPhoneNumbers {
+    if (phoneNumbers
+        .every((element) => element == null || element.isEmpty)) {
+      return false;
+    }
+    return phoneNumbers.isNotEmpty;
   }
 }

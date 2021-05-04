@@ -1,8 +1,10 @@
 class AppIcons {}
 
-class AppAssetImages {
-  static const homeBanner = 'assets/home-banner.png';
-  static const vaccineTimeline = 'assets/vaccination-bannar.png';
-}
+class AppAssetImages {}
 
-class AppNetworkImages {}
+class AppNetworkImages {
+  static const plasmaDonationImageUrl =
+      'https://i.ibb.co/tb5rwDD/Home-banner.png';
+  static const vaccineImageUrl =
+      'https://i.ibb.co/m8swsgj/Vaccination-bannar.png';
+}

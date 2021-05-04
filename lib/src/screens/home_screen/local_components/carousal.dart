@@ -12,8 +12,8 @@ class Carousel extends StatefulWidget {
 class _CarouselWithIndicatorState extends State<Carousel> {
   int _current = 0;
   final imageSliders = [
-    Image.asset(AppAssetImages.homeBanner),
-    Image.asset(AppAssetImages.homeBanner),
+    Image.network(AppNetworkImages.plasmaDonationImageUrl),
+    Image.network(AppNetworkImages.plasmaDonationImageUrl),
   ];
   @override
   Widget build(BuildContext context) {

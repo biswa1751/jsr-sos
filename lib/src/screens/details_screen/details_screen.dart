@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:jsr_sos/src/constants/constants.dart';
+import 'package:jsr_sos/src/global_components/app_button.dart';
 import 'package:jsr_sos/src/global_components/global_app_bar.dart';
 import 'package:jsr_sos/src/global_components/loading_card.dart';
+import 'package:jsr_sos/src/helpers/app_helpers.dart';
 import 'package:jsr_sos/src/models/resource.dart';
 import 'package:jsr_sos/src/models/service.dart';
 import 'package:jsr_sos/src/screens/error_info_screen/error_info_screen.dart';
@@ -14,7 +17,7 @@ class DetailsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: globalAppBar(title: service.title),
+      appBar: globalAppBar(title: service.title ?? 'Resource'),
       body: StreamBuilder<List<Resource>>(
         stream: FirestoreDatabaseService().resourcesStream(service.route),
         builder: (_, snapshot) {
@@ -33,11 +36,9 @@ class DetailsScreen extends StatelessWidget {
           return Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(
-                height: 20,
-              ),
               Flexible(
                 child: ListView.builder(
+                  padding: const EdgeInsets.only(top: 20),
                   itemCount: snapshot.data?.length,
                   itemBuilder: (_, index) {
                     final doctor = snapshot.data?[index];
@@ -45,6 +46,13 @@ class DetailsScreen extends StatelessWidget {
                   },
                 ),
               ),
+              if (service.title == 'Vaccines')
+                BigAppButton(
+                  text: 'Register on COWIN',
+                  onPressed: () {
+                    AppHelpers.launchUrl(AppConstants.covinRegistrationLink);
+                  },
+                )
             ],
           );
         },

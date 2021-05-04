@@ -77,7 +77,24 @@ class AppHelpers {
   }
 
   static void call(String number) async {
-    final url = 'tel:$number';
+    final uri = Uri(
+      scheme: 'tel',
+      path: number,
+    );
+    final url = uri.toString();
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      print('Cannot launch url $url');
+    }
+  }
+
+  static void launchUrl(String urlToLaunch) async {
+    final uri = Uri(
+      scheme: 'https',
+      path: urlToLaunch,
+    );
+    final url = uri.toString();
     if (await canLaunch(url)) {
       await launch(url);
     } else {

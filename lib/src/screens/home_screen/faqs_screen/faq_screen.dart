@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:jsr_sos/src/constants/assets_urls.dart';
 import 'package:jsr_sos/src/global_components/app_stream_builder.dart';
@@ -21,8 +22,8 @@ class FaqsScreen extends StatelessWidget {
         ),
         Padding(
           padding: const EdgeInsets.all(20.0),
-          child: Image.network(
-            AppNetworkImages.vaccineImageUrl,
+          child: CachedNetworkImage(
+            imageUrl: AppNetworkImages.vaccineImageUrl,
             fit: BoxFit.cover,
             width: MediaQuery.of(context).size.width,
           ),

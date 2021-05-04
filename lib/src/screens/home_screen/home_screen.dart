@@ -6,7 +6,7 @@ import 'package:jsr_sos/src/constants/theme.dart';
 import 'package:jsr_sos/src/global_components/global_app_bar.dart';
 import 'package:jsr_sos/src/screens/home_screen/doctors_screen/doctors_screen.dart';
 import 'package:jsr_sos/src/screens/home_screen/doctors_screen/local_components/select_number.dart';
-import 'package:jsr_sos/src/screens/home_screen/faqs_screen/fas_screen.dart';
+import 'package:jsr_sos/src/screens/home_screen/faqs_screen/faq_screen.dart';
 import 'package:jsr_sos/src/screens/home_screen/helpline_screen/helpline_screen.dart';
 import 'package:jsr_sos/src/screens/home_screen/services_screen/servicess_screen.dart';
 
@@ -25,7 +25,7 @@ class _HomeScreenState extends State<HomeScreen> {
     FaqsScreen(),
     HelplineScreen()
   ];
-  final titles = ['Home', 'Doctor', 'Faqs', 'Helpline'];
+  final titles = ['Home', 'Doctor', "FAQ's", 'Helpline'];
   @override
   Widget build(BuildContext context) {
     return Scaffold(

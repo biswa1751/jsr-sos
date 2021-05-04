@@ -39,9 +39,8 @@ class BigAppButton extends StatelessWidget {
     return MaterialButton(
       color: AppColors.blue,
       onPressed: onPressed,
-      height: 45,
+      height: 55,
       minWidth: double.infinity,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
       child: Text(
         text,
         style: AppTheme.textTheme.h216Regular!.copyWith(color: Colors.white),

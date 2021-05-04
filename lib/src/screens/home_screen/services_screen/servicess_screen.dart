@@ -6,12 +6,7 @@ class ServicesScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: [
-        Carousel(),
-        Flexible(
-          child: ServicesSelect(),
-        )
-      ],
+      children: [Carousel(), Flexible(child: ServicesSelect())],
     );
   }
 }

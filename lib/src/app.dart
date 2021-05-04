@@ -1,7 +1,7 @@
-import 'package:jsr_sos/src/constants/theme.dart';
-import 'package:jsr_sos/src/constants/strings.dart';
-import 'package:jsr_sos/src/services/app_route_service.dart';
 import 'package:flutter/material.dart';
+import 'package:jsr_sos/src/constants/strings.dart';
+import 'package:jsr_sos/src/constants/theme.dart';
+import 'package:jsr_sos/src/services/app_route_service.dart';
 
 class MyApp extends StatefulWidget {
   @override

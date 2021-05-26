@@ -4,5 +4,6 @@ class FireStorePaths {
   static const services = 'services';
   static const faqs = 'faqs';
   static const doctors = 'doctors';
+  static const banners = 'banners';
   static String sourcesURl(String source) => 'services/$source/service_options';
 }

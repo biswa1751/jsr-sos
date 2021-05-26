@@ -89,12 +89,21 @@ class AppHelpers {
     }
   }
 
-  static void launchUrl(String urlToLaunch) async {
+  static void launchWebUrl(String urlToLaunch) async {
     final uri = Uri(
       scheme: 'https',
       path: urlToLaunch,
     );
     final url = uri.toString();
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      print('Cannot launch url $url');
+    }
+  }
+
+  static void launcUrl(String urlToLaunch) async {
+    final url = urlToLaunch;
     if (await canLaunch(url)) {
       await launch(url);
     } else {

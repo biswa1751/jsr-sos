@@ -1,7 +1,7 @@
 import 'dart:async';
-import 'dart:developer';
 
 import 'package:jsr_sos/src/constants/firestore_paths.dart';
+import 'package:jsr_sos/src/models/banner.dart';
 import 'package:jsr_sos/src/models/faq.dart';
 import 'package:jsr_sos/src/models/resource.dart';
 import 'package:jsr_sos/src/models/service.dart';
@@ -39,6 +39,12 @@ class FirestoreDatabaseService {
         path: FireStorePaths.faqs,
         builder: (data, documentId) {
           return Faq.fromMap(data, documentId);
+        },
+      );
+  Stream<List<AppBanner>> bannerStream() => _service.collectionStream(
+        path: FireStorePaths.banners,
+        builder: (data, documentId) {
+          return AppBanner.fromMap(data, documentId);
         },
       );
 }

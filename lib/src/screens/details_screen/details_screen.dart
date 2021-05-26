@@ -50,7 +50,7 @@ class DetailsScreen extends StatelessWidget {
                 BigAppButton(
                   text: 'Register on COWIN',
                   onPressed: () {
-                    AppHelpers.launchUrl(AppConstants.covinRegistrationLink);
+                    AppHelpers.launchWebUrl(AppConstants.covinRegistrationLink);
                   },
                 )
             ],
